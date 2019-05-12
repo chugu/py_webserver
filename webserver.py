@@ -6,7 +6,7 @@ class RequestHandler(BaseHTTPServer.BaseHTTPRequestHandler):
     '''Handle HTTP requests by returning a fixed 'page'.'''
 
     # Page to send back.
-    version = 'v1.1'
+    version = 'v1.13'
     Page = '''\
 <html>
 <body>
