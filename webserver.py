@@ -1,20 +1,23 @@
 #import SimpleHTTPServer
 import BaseHTTPServer
 import datetime
+import socket
 
 class RequestHandler(BaseHTTPServer.BaseHTTPRequestHandler):
     '''Handle HTTP requests by returning a fixed 'page'.'''
 
     # Page to send back.
-    version = 'v1.13'
+    version = 'v1.14'
+    hostname = socket.gethostname()
     Page = '''\
 <html>
 <body>
 <p>App version %s</p>
+<p>hostname %s</p>
 </body>
 
 </html>
-'''% version
+''' % (version, hostname)
 
     # Handle a GET request.
     def do_GET(self):
